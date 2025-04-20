@@ -1,0 +1,26 @@
+# === PYTHON ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+.env
+.env.*
+
+# === NODE/REACT (Frontend) ===
+mentora-frontend/node_modules/
+mentora-frontend/build/
+mentora-frontend/.env
+mentora-frontend/.env.*
+
+# === OS/Editor files ===
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+*.swp
+
+# === General ===
+*.bak
+*.tmp
