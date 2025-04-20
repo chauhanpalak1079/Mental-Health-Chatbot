@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: mentora-backend
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"  # or whatever your main file is
+    rootDir: backend
+    envVars:
+      - key: FLASK_ENV
+        value: production
