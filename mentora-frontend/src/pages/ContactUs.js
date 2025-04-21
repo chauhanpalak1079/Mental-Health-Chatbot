@@ -1,32 +1,31 @@
-import React from "react";
-import "../styles/ContactUs.css";
+import React from 'react';
+import "../styles/Contact.css";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaGlobe } from 'react-icons/fa';
 
-const ContactUs = () => {
+const Contact = () => {
   return (
-    <div className="contact-us-container">
-      <h2>Contact Us</h2>
-      <div className="contact-details">
-        <p><span>📍 Address:</span> 123 Main Street, Pune, India</p>
-        <p><span>📞 Phone:</span> +91 9876543210</p>
-        <p><span>📧 Email:</span> support@mentora.com</p>
-        <p><span>🕒 Hours:</span> Mon–Fri, 9am–6pm</p>
-      </div>
-
-      <div className="social-links">
-        <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
-          LinkedIn
-        </a>
-      </div>
-
-      <div className="faq-section">
-        <h3>FAQs</h3>
-        <ul>
-          <li><strong>How can I reset my password?</strong> Go to the login page → Click "Forgot Password".</li>
-          <li><strong>How do I contact support?</strong> Email us at support@mentora.com.</li>
-        </ul>
+    <div className="contact-container">
+      <div className="contact-card">
+        <h1>Contact Us</h1>
+        <div className="contact-item">
+          <FaMapMarkerAlt className="contact-icon" />
+          <p>Parth Residency,Lohgaon,Pune</p>
+        </div>
+        <div className="contact-item">
+          <FaPhoneAlt className="contact-icon" />
+          <p>876-7604-500</p>
+        </div>
+        <div className="contact-item">
+          <FaEnvelope className="contact-icon" />
+          <p>mentora.ai@gmail.com</p>
+        </div>
+        <div className="contact-item">
+          <FaGlobe className="contact-icon" />
+          <p>www.mentora.ai.com</p>
+        </div>
       </div>
     </div>
   );
 };
 
-export default ContactUs;
+export default Contact;
