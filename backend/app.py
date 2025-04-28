@@ -9,7 +9,7 @@ from user_profile import profile_bp
 from mood import mood_bp
 import os
 
-port = int(os.environ.get('PORT', 5000))
+port = int(os.environ.get('PORT', 10000))
 
 app = Flask(__name__)
 app.config.from_object(DevelopmentConfig)
@@ -24,4 +24,4 @@ app.register_blueprint(mood_bp)
 
 if __name__ == "__main__":
     create_tables()  # Ensure tables exist before running
-    app.run(host='0.0.0.0', port=port, debug=app.config["DEBUG"])
+    app.run(host='0.0.0.0', port=10000, debug=app.config["DEBUG"])
