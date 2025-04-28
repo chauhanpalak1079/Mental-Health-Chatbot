@@ -60,15 +60,15 @@ def analyze_sentiment(user_id):  # Function name is back to normal
     
 
     # Perform BERT Sentiment Analysis on all messages together
-    bert_results = bert_sentiment_analysis(user_messages)
-    print(bert_results)
-    bert_sentiment = {
-        "average_sentiment_score": bert_results["average_sentiment_score"],
-        "sentiment_label": bert_results["sentiment_label"]
-    }
+    # bert_results = bert_sentiment_analysis(user_messages)
+    #print(bert_results)
+    #bert_sentiment = {
+    #    "average_sentiment_score": bert_results["average_sentiment_score"],
+    #    "sentiment_label": bert_results["sentiment_label"]
+    #}
 
     # Save sentiment analysis results to the database
-    save_sentiment_report(user_id, username, bert_sentiment["average_sentiment_score"], bert_sentiment["sentiment_label"])
+    #save_sentiment_report(user_id, username, bert_sentiment["average_sentiment_score"], bert_sentiment["sentiment_label"])
     
 
 
@@ -129,7 +129,7 @@ Return only the **formatted report**, nothing extra.
 
     response_data = {
     "user_id": user_id,
-    "bert_sentiment": bert_sentiment,
+    "bert_sentiment": 0, # Placeholder for BERT sentiment score
     "gemini_report": cleaned_report
 }
 
