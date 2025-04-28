@@ -42,7 +42,7 @@ const Chat = () => {
       return;
     }
 
-    const response = await fetch("http://127.0.0.1:5000/chat/history", {
+    const response = await fetch("https://mentora-backend-w886.onrender.com/chat/history", {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -70,7 +70,7 @@ const Chat = () => {
     setMessage("");
     setLoading(true);
 
-    const response = await fetch("http://127.0.0.1:5000/chat", {
+    const response = await fetch("https://mentora-backend-w886.onrender.com/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -100,7 +100,7 @@ const Chat = () => {
       return;
     }
 
-    await fetch("http://127.0.0.1:5000/start-camera", {
+    await fetch("https://mentora-backend-w886.onrender.com/start-camera", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -118,7 +118,7 @@ const Chat = () => {
       return;
     }
 
-    await fetch("http://127.0.0.1:5000/stop-camera", {
+    await fetch("https://mentora-backend-w886.onrender.com/stop-camera", {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
     });
