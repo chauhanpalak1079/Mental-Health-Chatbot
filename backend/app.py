@@ -13,7 +13,7 @@ port = int(os.environ.get('PORT', 5000))
 
 app = Flask(__name__)
 app.config.from_object(DevelopmentConfig)
-CORS(app)
+CORS(app,  origins=["https://mentora-frontend.onrender.com"])
 # Register blueprints
 app.register_blueprint(auth_bp)
 app.register_blueprint(chatbot_bp)
