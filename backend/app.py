@@ -11,7 +11,9 @@ import os
 
 app = Flask(__name__)
 app.config.from_object(DevelopmentConfig)
-CORS(app, origins=["https://mentora-frontend.onrender.com"], supports_credentials=True, allow_headers=["Content-Type", "Authorization"])
+CORS(app, app, resources={r"/*": {"origins": "https://mentora-frontend.onrender.com"}}, supports_credentials=True, allow_headers=["Content-Type", "Authorization"])
+create_tables() 
+
 
 @app.route('/')
 def home():
@@ -26,6 +28,5 @@ app.register_blueprint(mood_bp)
 
 
 if __name__ == "__main__":
-    create_tables()  # Ensure tables exist before running
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000)), debug=True)
+    app.run() # Ensure tables exist before running
     
