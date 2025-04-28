@@ -23,5 +23,4 @@ app.register_blueprint(mood_bp)
 
 if __name__ == "__main__":
     create_tables()  # Ensure tables exist before running
-    port = int(os.environ.get('PORT', 10000))  # Render will provide the correct port
-    app.run(host='0.0.0.0', port=port, debug=True)  # Use 0.0.0.0 to bind to all interfaces
+    
