@@ -13,6 +13,10 @@ app = Flask(__name__)
 app.config.from_object(DevelopmentConfig)
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
+@app.route('/')
+def home():
+    return "App is running!"
+
 # Register blueprints
 app.register_blueprint(auth_bp)
 app.register_blueprint(chatbot_bp)
