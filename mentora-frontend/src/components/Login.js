@@ -24,7 +24,7 @@ const Login = () => {
       localStorage.setItem("token", data.token);
       setLoginMessage("Login successful!"); // Set success message
       setTimeout(() => {
-        navigate("/Chat");
+        navigate("/chat");
       }, 2000);
     } else {
       setLoginMessage(data.error);
