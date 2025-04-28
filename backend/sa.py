@@ -1,4 +1,5 @@
 from flask import Blueprint, request, jsonify, send_file
+from flask_cors import cross_origin, CORS
 import google.generativeai as genai
 import os
 import jwt
@@ -13,7 +14,7 @@ from sentimental_model import bert_sentiment_analysis  # Corrected function name
 
 # Define Flask Blueprint
 sentiment_bp = Blueprint("sentiment", __name__)
-
+CORS(sentiment_bp, resources={r"/*": {"origins": "*"}})
 # Load Gemini API key
 SECRET_KEY = os.getenv("SECRET_KEY", "fucking_do_it_pr0prely") 
 genai.configure(api_key=Config.GEMINI_API_KEY)
@@ -41,6 +42,7 @@ def token_required(f):
 
 # API Route: Analyze Sentiment for a User
 @sentiment_bp.route("/analyze_sentiment", methods=["POST"])
+@cross_origin(origin='*') 
 @token_required
 def analyze_sentiment(user_id):  # Function name is back to normal
     # Fetch chat history
