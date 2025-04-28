@@ -13,7 +13,7 @@ function MoodCalendar() {
 
   // Fetch all logged dates on load
   useEffect(() => {
-    fetch('https://mentora-backend-w886.onrender.com/mood-log/dates', {
+    fetch('http://127.0.0.1:5000/mood-log/dates', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -60,7 +60,6 @@ function MoodCalendar() {
   
     const dateStr = formatDate(date);
     const isLogged = loggedDates.includes(dateStr);
-    const isFuture = date > today;
     const isPast = date < today;
   
     if (isLogged) return 'logged-date';

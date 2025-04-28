@@ -10,7 +10,7 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("token"); // Remove stored authentication token
     setMenuOpen(false); // Close menu after logout
-    navigate("/login"); // Redirect to Home page
+    navigate("/"); // Redirect to Home page
   };
 
   return (

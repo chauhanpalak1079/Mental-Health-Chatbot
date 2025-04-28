@@ -12,7 +12,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("https://mentora-backend-w886.onrender.com/login", {
+    const response = await fetch("http://127.0.0.1:5000/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -24,7 +24,7 @@ const Login = () => {
       localStorage.setItem("token", data.token);
       setLoginMessage("Login successful!"); // Set success message
       setTimeout(() => {
-        navigate("/chat");
+        navigate("/Chat");
       }, 2000);
     } else {
       setLoginMessage(data.error);

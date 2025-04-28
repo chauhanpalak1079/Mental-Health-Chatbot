@@ -3,14 +3,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #227C70; /* Deep Greenish Teal (Calm & Professional) */
+  background-color: #227C70; 
   color: white;
   padding: 10px 20px;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 1100; 
   height: 50px;
 }
 
@@ -43,18 +43,19 @@
 .side-menu {
   position: fixed;
   top: 0;
-  left: -250px; /* Initially hidden */
+  left: -250px;
   width: 250px;
   height: 100%;
-  background-color: #EAF6F6; /* Soft Teal (Blends with Home Page) */
+  background-color: #EAF6F6; 
   padding-top: 60px;
   transition: 0.3s ease-in-out;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1101;
 }
 
 /* Sidebar Active */
 .side-menu.active {
-  left: 0; /* Show when active */
+  left: 0;
 }
 
 /* Close button */
@@ -82,7 +83,7 @@
 }
 
 .side-menu ul li a {
-  color: #227C70; /* Deep Teal (Consistency with Navbar) */
+  color: #227C70;
   text-decoration: none;
   font-size: 20px;
   display: block;
@@ -90,7 +91,7 @@
 }
 
 .side-menu ul li a:hover {
-  background-color: #FFD750; /* Soft Yellow (Positive Energy) */
+  background-color: #FFD750; 
   color: #333;
   border-radius: 5px;
 }
@@ -98,7 +99,7 @@
 /* Logout Button */
 .logout-btn {
   width: 80%;
-  background-color: #D97706; /* Dark Orange (Warm & Energetic) */
+  background-color: #D97706; 
   color: white;
   padding: 12px;
   border: none;
@@ -112,17 +113,17 @@
 }
 
 .logout-btn:hover {
-  background-color: #B45309; /* Slightly Darker Orange */
+  background-color: #B45309; 
 }
 
-/* Overlay effect when menu is open */
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Darkened background */
+  background: rgba(0, 0, 0, 0.4);
   z-index: 999;
   display: none;
 }

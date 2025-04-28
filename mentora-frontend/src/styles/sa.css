@@ -15,7 +15,7 @@ h2 {
 
 .sentiment-description {
     background-color: #fff;
-    padding: 20px 25px;
+    padding: 15px;
     border-radius: 8px;
     margin-bottom: 25px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -46,7 +46,8 @@ h2 {
 
 /* Generate Button */
 .generate-button {
-    padding: 12px 25px;
+    width: 20%;
+    padding: 12px;
     background-color: #F4A900;
     color: white;
     font-size: 16px;
@@ -54,7 +55,17 @@ h2 {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
+  }
+  
+  @media (max-width: 768px) {
+    .generate-button {
+      width: 50%;
+      font-size: 14px; 
+      padding: 10px;
+      margin-top: 10px; 
+    }
+  }
+  
 
 .generate-button:disabled {
     background-color: #ddd;
@@ -65,6 +76,10 @@ h2 {
     background-color: #e29400;
 }
 
+.button-row {
+    flex-direction: column;
+    gap: 10px;
+  }
 /* Loading spinner (small for next to button) */
 .loading-circle-small {
     width: 20px;
@@ -79,7 +94,7 @@ h2 {
 .report-container {
     margin-top: 30px;
     background: #f9f9f9;
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -145,4 +160,12 @@ h2 {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 768px) {
+    .sentiment-container {
+      width: 100%;
+      padding: 25px;
+      margin: 20px 10px;
+    }
 }

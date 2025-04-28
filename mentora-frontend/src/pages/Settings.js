@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "../styles/Settings.css";
 
 function Settings({ toggleTheme, theme }) {
   const [notifications, setNotifications] = useState(true);

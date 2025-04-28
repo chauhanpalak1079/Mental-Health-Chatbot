@@ -9,7 +9,7 @@ const Profile = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
 
-    fetch('https://mentora-backend-w886.onrender.com/profile', {
+    fetch('http://127.0.0.1:5000/profile', {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`

@@ -19,7 +19,7 @@ function MoodLogForm() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    fetch(`https://mentora-backend-w886.onrender.com/mood-log/${date}`, {
+    fetch(`http://127.0.0.1:5000/mood-log/${date}`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -45,7 +45,7 @@ function MoodLogForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch('https://mentora-backend-w886.onrender.com/mood-log', {
+    const res = await fetch('http://127.0.0.1:5000/mood-log', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

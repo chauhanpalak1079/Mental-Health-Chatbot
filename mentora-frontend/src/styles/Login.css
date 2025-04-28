@@ -1,31 +1,38 @@
-/* Remove full-page background color */
+/* Apply background color to entire page */
 body {
-  background-color: white; /* Change to white */
+  background-color: #EAF6F6;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Container holds the login box in the center, slightly moved up */
 .login-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100vh;
+  padding-top: 150px; 
 }
 
+/* Login Box Styling */
 .login-box {
-  background: white;
+  background: rgba(255, 255, 255, 0.9); 
   padding: 50px 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
   width: 400px;
   text-align: center;
 }
 
+/* Heading Style */
 .login-box h2 {
-  color: black !important; /* Use !important if necessary */
+  color: black;
   text-align: center;
   margin-bottom: 20px;
 }
 
-
+/* Input Fields */
 .input-group {
   margin-bottom: 15px;
   text-align: left;
@@ -45,6 +52,7 @@ body {
   border-radius: 5px;
 }
 
+/* Login Button */
 .login-button {
   width: 100%;
   padding: 10px;
@@ -57,13 +65,15 @@ body {
 }
 
 .login-button:hover {
-  background-color: #227C70;
+  background-color: #1c675e;
 }
 
+/* Signup Link */
 .signup-link {
   margin-top: 10px;
   color: red;
 }
+
 /* Login Message Box */
 .login-message {
   margin-top: 20px;
@@ -86,4 +96,3 @@ body {
   color: #e74c3c;
   border: 1px solid #e74c3c;
 }
-
