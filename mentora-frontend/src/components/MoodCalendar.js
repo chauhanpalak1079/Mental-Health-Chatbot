@@ -13,7 +13,7 @@ function MoodCalendar() {
 
   // Fetch all logged dates on load
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/mood-log/dates', {
+    fetch('https://mentora-backend-w886.onrender.com/mood-log/dates', {
       headers: {
         Authorization: `Bearer ${token}`,
       },

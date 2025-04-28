@@ -20,7 +20,7 @@ const SentimentAnalysis = () => {
         }
 
         try {
-            const response = await fetch("http://127.0.0.1:5000/analyze_sentiment", {
+            const response = await fetch("https://mentora-backend-w886.onrender.com/analyze_sentiment", {
                 method: "POST",
                 headers: {
                     "Authorization": `Bearer ${token}`,
@@ -53,7 +53,7 @@ const SentimentAnalysis = () => {
         setDownloading(true);
 
         try {
-            const response = await fetch("http://127.0.0.1:5000/download_report", {
+            const response = await fetch("https://mentora-backend-w886.onrender.com/download_report", {
                 method: "GET",
                 headers: {
                     "Authorization": `Bearer ${token}`
