@@ -11,7 +11,7 @@ import os
 
 app = Flask(__name__)
 app.config.from_object(DevelopmentConfig)
-CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+CORS(app, origins=["https://mentora-frontend.onrender.com"], supports_credentials=True, allow_headers=["Content-Type", "Authorization"])
 
 @app.route('/')
 def home():
