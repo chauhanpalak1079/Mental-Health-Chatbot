@@ -13,7 +13,7 @@ port = int(os.environ.get('PORT', 10000))
 
 app = Flask(__name__)
 app.config.from_object(DevelopmentConfig)
-CORS(app, resources={r"/*": {"origins": "https://mentora-frontend.onrender.com"}}, supports_credentials=True)
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 # Register blueprints
 app.register_blueprint(auth_bp)
