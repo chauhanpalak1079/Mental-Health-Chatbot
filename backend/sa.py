@@ -157,6 +157,7 @@ def download_report(user_id):
     formatted_chat = "\n".join([f"User: {msg} | Bot: {resp}" for msg, resp, _ in chat_history])
 
 
+    ''''
     # ✅ BERT Sentiment Analysis
     bert_scores = [bert_sentiment_analysis(msg) for msg, _, _ in chat_history]
     avg_bert_score = round(sum(res["average_sentiment_score"] for res in bert_scores) / len(bert_scores), 2)
@@ -165,7 +166,7 @@ def download_report(user_id):
     bert_sentiment = {
         "average_sentiment_score": avg_bert_score,
         "sentiment_label": sentiment_label
-    }
+    }'''
 
     # ✅ Fetch Gemini AI Report
     model = genai.GenerativeModel("gemini-1.5-pro")
@@ -240,7 +241,8 @@ def download_report(user_id):
     pdf.setFont("Helvetica", 11)
     pdf.line(50, y_position - 5, A4_WIDTH - 50, y_position - 5)
     y_position -= 30
-
+    '''
+    
     # ✅ Fetch Latest BERT Sentiment Score & Label from Database
     latest_sentiment = get_latest_sentiment(username)
 
@@ -257,7 +259,7 @@ def download_report(user_id):
     add_wrapped_text(f"Exact Score: {exact_bert_score}", 15)
 
     
-
+'''
     sections = ["Emotional Trends", "Summary of Mood Patterns", "Helpful Resources & Recommendations"]
     report_data = {}
 

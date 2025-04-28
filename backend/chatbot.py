@@ -15,6 +15,8 @@ from util import *
 chatbot_bp = Blueprint("chatbot", __name__)
 genai.configure(api_key=Config.GEMINI_API_KEY)
 
+'''
+
 # Check if CUDA is available
 use_cuda = torch.cuda.is_available()
 device = 'cuda' if use_cuda else 'cpu'
@@ -136,6 +138,7 @@ def start_camera():
 
     except Exception as e:
         return jsonify({"error": f"Failed to start camera: {str(e)}"}), 500
+'''
 
 
 @chatbot_bp.route('/chat', methods=['POST'])
@@ -161,9 +164,11 @@ def chat():
     
     print(username)
 
+    '''
     if not is_running:
         capture_thread = threading.Thread(target=capture_emotions, args=(username,))
         capture_thread.start()
+'''
 
     r = generate_response(username, message)
     bot_response = r.strip()
@@ -202,6 +207,7 @@ def get_chat_history():
             {"user_message": log[0], "bot_response": log[1], "timestamp": log[2]} for log in chat_logs
         ]
     })
+'''
 
 
 @chatbot_bp.route('/stop-camera', methods=['POST'])
@@ -209,6 +215,7 @@ def stop_emotion():
     global is_running
     is_running = False
     return jsonify({"message": "Emotion detection stopped"}), 200
+    '''
 
 
 def generate_response(username, message):
@@ -222,7 +229,7 @@ def generate_response(username, message):
     ])
 
     prompt = f"""
-    You are **Mentora**, a Mood Journal Assistant and Meditation Coach.
+    You are **Mentora**, a Mood Journal Assistant and Meditation Coach. Generate short and easy, friendly, and helpful responses.
     Your job is to help users reflect on emotions and provide relaxation exercises.
 
     {greeting} Here’s the past conversation:
@@ -230,7 +237,7 @@ def generate_response(username, message):
 
     Now, continue the conversation:
     User: {message}
-    Assistant:
+    
     """
 
     model = genai.GenerativeModel("gemini-1.5-pro-latest")
