@@ -27,4 +27,5 @@ app.register_blueprint(mood_bp)
 
 if __name__ == "__main__":
     create_tables()  # Ensure tables exist before running
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000)), debug=True)
     
