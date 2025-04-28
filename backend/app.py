@@ -11,7 +11,7 @@ import os
 
 app = Flask(__name__)
 app.config.from_object(DevelopmentConfig)
-CORS(app, app, resources={r"/*": {"origins": "https://mentora-frontend.onrender.com"}}, supports_credentials=True, allow_headers=["Content-Type", "Authorization"])
+CORS(app,resources={r"/*": {"origins": "https://mentora-frontend.onrender.com"}}, supports_credentials=True, allow_headers=["Content-Type", "Authorization"])
 create_tables() 
 
 
