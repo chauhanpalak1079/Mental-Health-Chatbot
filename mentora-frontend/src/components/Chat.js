@@ -14,11 +14,9 @@ const Chat = () => {
 
   useEffect(() => {
     fetchChatHistory();
-    startEmotionDetection();
     setupSpeechRecognition();
 
     return () => {
-      stopEmotionDetection();
       if (recognitionRef.current) {
         recognitionRef.current.stop();
       }
@@ -92,37 +90,9 @@ const Chat = () => {
     }
   };
 
-  const startEmotionDetection = async () => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      alert("Unauthorized! Please log in.");
-      navigate("/login");
-      return;
-    }
+  
 
-    await fetch("https://mentora-backend-w886.onrender.com/start-camera", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({}),
-    });
-  };
-
-  const stopEmotionDetection = async () => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      alert("Unauthorized! Please log in.");
-      navigate("/login");
-      return;
-    }
-
-    await fetch("https://mentora-backend-w886.onrender.com/stop-camera", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${token}` },
-    });
-  };
+  
 
   const setupSpeechRecognition = () => {
     const SpeechRecognition =

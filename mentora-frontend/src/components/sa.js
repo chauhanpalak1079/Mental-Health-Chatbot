@@ -6,7 +6,7 @@ const SentimentAnalysis = () => {
     const [geminiReport, setGeminiReport] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [downloading, setDownloading] = useState(false);
+    
 
     const analyzeSentiment = async () => {
         setLoading(true);
@@ -40,43 +40,6 @@ const SentimentAnalysis = () => {
             setError("Failed to fetch sentiment analysis. Please try again.");
         } finally {
             setLoading(false);
-        }
-    };
-
-    const downloadReport = async () => {
-        const token = localStorage.getItem("token");
-        if (!token) {
-            setError("Unauthorized: Please log in.");
-            return;
-        }
-
-        setDownloading(true);
-
-        try {
-            const response = await fetch("https://mentora-backend-w886.onrender.com/download_report", {
-                method: "GET",
-                headers: {
-                    "Authorization": `Bearer ${token}`
-                }
-            });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-
-            const blob = await response.blob();
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = "Mentora_Sentiment_Report.pdf";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        } catch (err) {
-            console.error("Error downloading report:", err);
-            setError("Failed to download report. Please try again.");
-        } finally {
-            setDownloading(false);
         }
     };
 
@@ -123,9 +86,7 @@ const SentimentAnalysis = () => {
                         </div>
                     )}
 
-                    <button className="download-button" onClick={downloadReport} disabled={downloading}>
-                        {downloading ? "Downloading..." : "Download Report"}
-                    </button>
+                    
                 </div>
             )}
         </div>
