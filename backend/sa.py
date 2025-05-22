@@ -121,7 +121,7 @@ Return only the **formatted report**, nothing extra.
         text = text.replace(" - ", "• ")
         return text.strip()
 
-    model = genai.GenerativeModel("gemini-1.5-pro")
+    model = genai.GenerativeModel("gemini-1.5-flash-001")
     response = model.generate_content(prompt)
     cleaned_report = clean_report(response.text)
     
@@ -169,7 +169,7 @@ def download_report(user_id):
     }'''
 
     # ✅ Fetch Gemini AI Report
-    model = genai.GenerativeModel("gemini-1.5-pro")
+    model = genai.GenerativeModel("gemini-1.5-flash-001")
     response = model.generate_content(f"""
     Analyze the following 7-day chat history:
     {formatted_chat}

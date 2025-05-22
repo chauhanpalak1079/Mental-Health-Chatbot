@@ -240,7 +240,7 @@ def generate_response(username, message):
     
     """
 
-    model = genai.GenerativeModel("gemini-1.5-pro-latest")
+    model = genai.GenerativeModel("gemini-1.5-flash-001")
     response = model.generate_content(prompt, generation_config={"temperature": 0.7, "max_output_tokens": 300})
 
     return response.text
